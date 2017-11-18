@@ -48,6 +48,11 @@
       MdContent
     },
     props: {
+      mdRTL: {
+          type: Boolean,
+          required: false,
+          default: false
+      },
       mdAlignment: {
         type: String,
         default: 'left',
@@ -205,7 +210,7 @@
           }
 
           this.containerStyles = {
-            transform: `translate3D(${-this.activeTabIndex * 100}%, 0, 0)`
+            transform: `translate3D(${this.mdRTL ? this.activeTabIndex * 100 : this.activeTabIndex * 100}%, 0, 0)`
           }
         }
       },
